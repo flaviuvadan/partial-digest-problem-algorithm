@@ -33,7 +33,7 @@ public class pdp{
 	Scanner 			scan;
 	LinkedList<Integer> L;
 	LinkedList<Integer> X;
-	Stack<Pair>			S;
+	Stack<pair>			S;
 	
 	//constructor to initialize a pdp class
 	pdp(){
@@ -41,6 +41,11 @@ public class pdp{
 		L	 = new LinkedList<>();
 		X 	 = new LinkedList<>();
 		S	 = new Stack<>();
+	}
+	
+	//main method to run everything 
+	public static void main(String[] args){
+		
 	}
 }
 	
