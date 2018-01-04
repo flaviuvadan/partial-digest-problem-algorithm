@@ -5,10 +5,10 @@ import java.util.*;
 *
 * Instructions: compile using javac pdp.java
 * Input format: <num elements>
-*				<num1>
-*				<num2>
-*				...
-*				<num n>
+*		<num1>
+*		<num2>
+*		...
+*		<num n>
 * Output format: X: [elements]
 *
 */
@@ -30,17 +30,17 @@ public class pdp{
 	
 	//Scanner for input, L to keep track of provided elements, X is the solution list
 	//and S is the stack keeping track of pairs
-	Scanner 			scan;
+	Scanner 	    scan;
 	LinkedList<Integer> L;
 	LinkedList<Integer> X;
-	Stack<pair>			S;
+	Stack<pair>	    S;
 	
 	//constructor to initialize a pdp class
 	pdp(){
 		scan = new Scanner(System.in);
-		L	 = new LinkedList<>();
-		X 	 = new LinkedList<>();
-		S	 = new Stack<>();
+		L    = new LinkedList<>();
+		X    = new LinkedList<>();
+		S    = new Stack<>();
 	}
 	
 	//Scan input and add given digest fragments to L
