@@ -85,6 +85,19 @@ public class pdp{
 		return true;
 	}
 	
+	//Returns max value from L. Implemented in a naivë way.
+	public int max(){
+		int max = L.getFirst();
+		
+		for(Integer i : L){
+			if(i > max){
+				max = i;
+			}
+		}
+		
+		return max;
+	}
+	
 	//main method to run everything 
 	public static void main(String[] args){
 		
