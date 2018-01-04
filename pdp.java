@@ -159,7 +159,9 @@ public class pdp{
 	
 	//main method to run everything 
 	public static void main(String[] args){
-		
+		pdp pdp_instance = new pdp();
+		pdp_instance.readFragments();
+		pdp_instance.pdp();
 	}
 }
 	
