@@ -86,7 +86,7 @@ public class pdp{
 	}
 	
 	//Returns max value from L. Implemented in a naivë way.
-	public int max(){
+	public int maxL(){
 		int max = L.getFirst();
 		
 		for(Integer i : L){
@@ -96,6 +96,65 @@ public class pdp{
 		}
 		
 		return max;
+	}
+	
+	public void pdp(){
+		Integer y_max = this.maxL();
+		L.remove(y_max);
+		X.add(0);
+		X.add(y_max);
+		
+		//Keep track of backtracking steps
+		Integer d = 0;
+		
+		while(!L.isEmpty()){
+			
+			//Largest element of L
+			Integer y = this.maxL(); 
+			
+			//Placement on left hand side
+			if(delta(y, X) && d == 0){
+				for(Integer i : this.deltaSet(y)){
+					L.remove(i);
+				}
+				
+				X.add(y);
+				S.push(new pair(y, 0));
+				
+			//Placement on the right hand side
+			} else if(delta(y_max - y, X) && d <= 1){
+				for(Integer i : deltaSet(y_max - y)){
+					L.remove(i);
+				}
+				
+				X.add(y_max - y);
+				S.push(new pair(y_max - y, 1));
+				d = 0;
+			} else if(!S.isEmpty()){
+				//Recall last position from stack
+				pair y_pop = S.pop();
+				d = y_pop.d + 1;
+				
+				//Reconstruct previous distance set
+				LinkedList<Integer> temp = deltaSet(y_pop.n);
+				for(Integer i : temp){
+					L.add(i);
+				}
+				
+				//Reconstruct previous position set
+				X.remove(new Integer(y_pop.n));
+				
+			//Impossible backtracking 
+			} else{
+				S.clear();
+				System.out.println("No feasible solution.");
+				break;
+			}
+		}
+		
+		//Output feasible solution
+		Collections.sort(X);
+		System.out.println("X: " + X.toString() + " is a solution.");
 	}
 	
 	//main method to run everything 
