@@ -1,4 +1,4 @@
-# partial-digest-problem-algorithm
+# Partial-digest-problem-algorithm
 
 A Java implementation of the branch and bound backtracking algorithm for solving the partial digest problem.
 
